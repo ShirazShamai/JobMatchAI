@@ -1,11 +1,8 @@
 ﻿from matcher import extract_skills, compare_skills, calculate_match_score
 from skills import SKILLS
 
-with open("data/resume.txt", encoding="utf-8-sig") as file:
-    resume_text = file.read()
-
-with open("data/job_description.txt", encoding="utf-8-sig") as file:
-    job_text = file.read()
+resume_text = input("Enter your resume text: ")
+job_text = input("Enter the job description: ")
 
 resume_skills = extract_skills(resume_text, SKILLS)
 job_skills = extract_skills(job_text, SKILLS)
