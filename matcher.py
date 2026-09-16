@@ -5,13 +5,31 @@
         text = text.replace(punctuation, " ")
 
     words = text.split()
+    normalized_text = " " + " ".join(words) + " "
     found_skills = []
 
     for skill in skills:
-        if skill.lower() in words:
+        # ?????? ???? ?????? ?????? ????? ???? ???? ????.
+        skill_text = " " + skill.lower() + " "
+        if skill_text in normalized_text:
             found_skills.append(skill)
 
-    return found_skills
+    specific_skills = []
+
+    for skill in found_skills:
+        is_part_of_longer_skill = False
+        skill_text = " " + skill.lower() + " "
+
+        for other_skill in found_skills:
+            other_skill_text = " " + other_skill.lower() + " "
+            if len(other_skill) > len(skill) and skill_text in other_skill_text:
+                is_part_of_longer_skill = True
+                break
+
+        if not is_part_of_longer_skill:
+            specific_skills.append(skill)
+
+    return specific_skills
 
 
 def compare_skills(resume_skills, job_skills):
