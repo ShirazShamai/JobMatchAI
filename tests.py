@@ -26,9 +26,10 @@ class TestMatcher(unittest.TestCase):
     def test_compare_skills(self):
         resume_skills = ["Python", "SQL", "Git"]
         job_skills = ["Python", "Java", "SQL", "Linux"]
-        matching_skills, missing_skills = compare_skills(resume_skills, job_skills)
+        matching_skills, missing_skills, extra_skills = compare_skills(resume_skills, job_skills)
         self.assertEqual(matching_skills, ["Python", "SQL"])
         self.assertEqual(missing_skills, ["Java", "Linux"])
+        self.assertEqual(extra_skills, ["Git"])
 
     def test_calculate_match_score(self):
         matching_skills = ["Python", "SQL"]

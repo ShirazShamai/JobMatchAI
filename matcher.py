@@ -17,6 +17,7 @@
 def compare_skills(resume_skills, job_skills):
     matching_skills = []
     missing_skills = []
+    extra_skills = []
 
     for skill in job_skills:
         if skill in resume_skills:
@@ -24,7 +25,11 @@ def compare_skills(resume_skills, job_skills):
         else:
             missing_skills.append(skill)
 
-    return matching_skills, missing_skills
+    for skill in resume_skills:
+        if skill not in job_skills:
+            extra_skills.append(skill)
+
+    return matching_skills, missing_skills, extra_skills
 
 
 def calculate_match_score(matching_skills, job_skills):

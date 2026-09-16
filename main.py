@@ -13,7 +13,7 @@ job_text = input("Enter the job description: ")
 resume_skills = extract_skills(resume_text, SKILLS)
 job_skills = extract_skills(job_text, SKILLS)
 
-matching_skills, missing_skills = compare_skills(resume_skills, job_skills)
+matching_skills, missing_skills, extra_skills = compare_skills(resume_skills, job_skills)
 match_score = calculate_match_score(matching_skills, job_skills)
 suggestions = generate_suggestions(missing_skills)
 
@@ -22,6 +22,7 @@ print("Resume skills:", ", ".join(resume_skills) or "None")
 print("Job skills:", ", ".join(job_skills) or "None")
 print("Matching skills:", ", ".join(matching_skills) or "None")
 print("Missing skills:", ", ".join(missing_skills) or "None")
+print("Extra skills:", ", ".join(extra_skills) or "None")
 print(f"Match score: {match_score:.2f}%")
 
 print("\nSuggestions:")
