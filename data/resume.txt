@@ -1,0 +1,2 @@
+﻿Junior software developer with experience in Python and Git.
+Built a small Python project during my studies.
