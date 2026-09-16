@@ -55,7 +55,7 @@ Enter the PDF path (with or without surrounding quotes), then enter the job desc
 
 ## Screenshot
 
-*GUI screenshot coming soon.*
+![JobMatchAI GUI](docs/jobmatchai-gui.png)
 
 <!-- Add the image when available: ![JobMatchAI GUI](docs/screenshot.png) -->
 
